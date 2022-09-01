@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="w-3/5 bg-slate-200 py-5">
+        <h2 class="text-2xl py-5"> {{post.title}} </h2>
+        <figure><img src="{{post.image.url}}" class="py-5 h-80 w-3/5" alt="{{post.title}}"></figure>
+        <p> {{post.content|safe}}</p>
+    </div>
+{% comment %} # comment section {% endcomment %}
+    <div>
+    </div>
+
+{% endblock content %}

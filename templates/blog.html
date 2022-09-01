@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="pt-11">
+<div class="my-5">
+<h2 class="text-5xl text-slate-900 mx-auto">Latest from our blog </h2>
+</div>
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-2 lg:gap-2 md:gap-1 w-4/5 mx-auto" >
+
+    {% for post in posts %}
+
+    <div class="card w-96  sm:w-full justify-center bg-slate-100 shadow-xl m-2 p-2">
+        <figure><img src="{{post.image.url}}" class="h-40 w-11/12" alt="{{post.title}}"></figure>
+        <div class="card-body">
+          <h2 class="card-title">{{post.title}}</h2>
+              <div class="card-actions">
+              <a href="{% url 'singlepost' post.id %}" class="btn text-slate-500">Read Now</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+<div>
+
+
+</div>
+{% endblock content %}
+
+  
